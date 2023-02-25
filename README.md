@@ -9,6 +9,8 @@ The data is saving in memory (an array of reminders), managed by calendar servic
 
 # Screenshots
 <img src="screenshots/home.png" alt="Home page" title="Home page">
+<img src="screenshots/new-reminder.png" alt="New reminder" title="New reminder">
+<img src="screenshots/added-reminder.png" alt="Added reminder" title="Added reminder">
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
 
