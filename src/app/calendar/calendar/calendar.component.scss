@@ -20,7 +20,7 @@ table {
 	th {
 		padding: 8px;
 		text-align: center;
-		background-color: #2F74B5;
+		background-color: #000;
 		color: #fff;
 		font-weight: normal;
 	}
@@ -31,11 +31,11 @@ table {
 		font-weight: normal;
 		&:first-child {
 			background-color: #F2F2F2;
-			color: #2F74B5;
+			color: #000;
 		}
 		&:last-child {
 			background-color: #F2F2F2;
-			color: #2F74B5;
+			color: #000;
 		}
 	}
 }

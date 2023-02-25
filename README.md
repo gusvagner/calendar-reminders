@@ -1,11 +1,14 @@
 ## Description
-This is a simple project to create reminders in any day of the current month.
+This is a simple project to create reminders in any day of the current month. <br>
 In this app, it's possible to create, edit any data and delete a reminder.
 All necessary validations were done, not letting the user to save incomplete reminders.
 The data is saving in memory (an array of reminders), managed by calendar services.
 
 # External Tools
  - Angular Material
+
+# Screenshots
+<img src="screenshots/home.png" alt="Home page" title="Home page">
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
 
