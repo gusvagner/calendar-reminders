@@ -1,0 +1,38 @@
+<mat-toolbar>
+  <button mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Calendar Reminders</span>
+  <span class="spacer"></span>
+  <button mat-button (click)="openReminderForm()">
+   <mat-icon>add</mat-icon> New reminder
+ </button>
+</mat-toolbar>
+<div class="table-container">
+  <div>
+    <h3>{{ calendar.currentMonthName + ' - ' + calendar.currentYear }}</h3>
+  </div>
+  <table>
+    <tr>
+      <th *ngFor="let weekDay of calendar.daysOfWeekNames">{{ weekDay }}</th>
+    </tr>
+    <tr *ngFor="let daysOfWeek of calendar.weeks">
+      <td
+        class="day"
+        *ngFor="let day of daysOfWeek"
+        [ngClass]="{'currentDay' : day.isCurrentDay, 'notInMonth' : day.number === 0}">
+        {{ day.number }}
+        <div class="container-icon-calendar" *ngIf="day.hasReminder">
+          <mat-icon
+            (click)="openReminderForm(day.reminder)"
+            class="icon-calendar hasReminder"
+            [matTooltip]="getReminderDescriptionAndTime(day.reminder)"
+            [matTooltipClass]="'tooltip'"
+            aria-label="Icon that displays a tooltip about the reminder">
+            calendar_today
+          </mat-icon>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>

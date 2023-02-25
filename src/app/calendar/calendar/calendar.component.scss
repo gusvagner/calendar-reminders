@@ -1,0 +1,64 @@
+.spacer {
+	flex: 1 1 auto;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.table-container {
+	h3 {
+		margin-top: 10px;
+		text-align: center;
+	}
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 20px 0;
+	th {
+		padding: 8px;
+		text-align: center;
+		background-color: #2F74B5;
+		color: #fff;
+		font-weight: normal;
+	}
+	td {
+		border: 1px solid #D1D1D1;
+		padding: 25px 0px 25px 0px;
+		text-align: center;
+		font-weight: normal;
+		&:first-child {
+			background-color: #F2F2F2;
+			color: #2F74B5;
+		}
+		&:last-child {
+			background-color: #F2F2F2;
+			color: #2F74B5;
+		}
+	}
+}
+
+.hasReminder {
+	cursor: pointer;
+}
+
+.currentDay {
+	font-weight: bold !important;
+	background-color: #07a2e441 !important;
+}
+
+.container-icon-calendar {
+	position: relative;
+}
+
+.icon-calendar {
+	font-size: 20px;
+	position: absolute;
+	right: 0;
+}
+
+.notInMonth {
+  visibility: hidden;
+}

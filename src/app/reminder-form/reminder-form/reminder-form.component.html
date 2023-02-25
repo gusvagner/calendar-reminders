@@ -1,0 +1,94 @@
+<div class="container-form">
+  <form [formGroup]="reminderForm">
+    <h3><b>{{ getPageTitle() }}</b></h3>
+    <div class="form-group">
+      <label>Reminder</label>
+      <input
+        formControlName="text"
+        placeholder="Type the text of your reminder"
+        required
+      />
+      <p class="warning" *ngIf="text?.invalid && text?.dirty">
+        Please enter less than 30 characters
+      </p>
+    </div>
+    <br />
+    <div class="form-group">
+      <label>Date</label>
+      <input
+        type="date"
+        formControlName="date"
+        [min]="minDate"
+        [max]="maxDate"
+        required
+      />
+    </div>
+    <br />
+    <div class="form-group">
+      <label>Time</label>
+      <input type="time" formControlName="time" required />
+    </div>
+    <br />
+    <div class="form-group">
+      <label>City</label>
+      <input
+        formControlName="city"
+        placeholder="Type the name of your city"
+        required
+      />
+    </div>
+    <div class="weather-button">
+      <button
+        mat-stroked-button
+        color="primary"
+        (click)="checkWeather()"
+        [disabled]="!city?.dirty">
+        Check the weather in this city
+      </button>
+    </div><br>
+    <div *ngIf="weatherChecked && !error">
+      <span><b>Weather:</b> {{ weather.main }}, {{ weather.description }} </span><br>
+      <span><b>Temperature:</b> {{ weather.temperature }} &#8451;</span><br>
+      <span><b>Feels like:</b> {{ weather.feelsLike }} &#8451;</span><br>
+      <span><b>Max Temperature:</b> {{ weather.maxTemperature }} &#8451;</span><br>
+      <span><b>Min Temperature:</b> {{ weather.minTemperature }} &#8451;</span><br>
+    </div>
+    <p *ngIf="error && weatherChecked"> {{ errorMessage }}</p>
+    <p class="warning" *ngIf="submitted && !reminderForm.valid">
+      Fill all the required fields
+    </p>
+    <br>
+    <button
+      mat-raised-button
+      class="cancel-button"
+      color="basic"
+      (click)="close()">
+      Cancel
+    </button>
+    <button
+      *ngIf="updating"
+      mat-raised-button
+      class="save-button"
+      color="primary"
+      (click)="editReminder()">
+      Update
+    </button>
+    <button
+      *ngIf="!updating"
+      mat-raised-button
+      class="save-button"
+      color="primary"
+      (click)="saveReminder()"
+      [disabled]="!reminderForm.valid">
+      Save
+    </button>
+    <button
+      mat-raised-button
+      class="delete-button"
+      color="warn"
+      *ngIf="updating"
+      (click)="deleteWarning()">
+      Delete
+    </button>
+  </form>
+</div>
